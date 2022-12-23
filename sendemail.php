@@ -27,7 +27,7 @@ try {
 if ( $senderName && $senderEmail && $senderPhone && $subject && $message) {
   $recipient = RECIPIENT_NAME . " <" . RECIPIENT_EMAIL . ">";
   $headers = "From: " . $senderName . "";
-  $msgBody = " Email: ". $senderEmail .  " Phone: ". $senderPhone . " Subject: ". $subject .  " Message: " . $message . "";
+  $msgBody = "\n Email: ". $senderEmail .  "\n Phone: ". $senderPhone . "\n Subject: ". $subject .  "\n Message: " . $message . "";
 
 // changes start
 
@@ -49,7 +49,7 @@ $mail->SMTPOptions = array(
  $mail->Password = 'Qwerty.123+';
  $mail->setFrom($senderEmail);
 
- $mail->Subject = $headers;
+ $mail->Subject = $subject;
  $mail->Body = $msgBody;
  $mail->CharSet = 'UTF-8';
  $mail->addAddress(RECIPIENT_EMAIL);
