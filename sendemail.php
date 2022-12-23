@@ -19,12 +19,12 @@ if ( $senderName && $senderEmail && $senderPhone && $subject && $message) {
   $headers = "From: " . $senderName . "";
   $msgBody = " Email: ". $senderEmail .  " Phone: ". $senderPhone . " Subject: ". $subject .  " Message: " . $message . "";
   $success = mail( $recipient, $headers, $msgBody );
-
-  echo "<script>alert('Your message has been sucessfully submitted Thanks. 🙂');</script>";
-  echo "<script>document.location.href='index.html'</script>";
 }
 
-else{
+if ($success) {
+  echo "<script>alert('Your message has been sucessfully submitted Thanks. 🙂');</script>";
+  echo "<script>document.location.href='index.html'</script>";
+}else {
   echo "<script>alert('Mail was not Send');</script>";
   echo "<script>document.location.href='contact.html'</script>";
 }
