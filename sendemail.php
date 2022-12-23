@@ -27,7 +27,7 @@ try {
 if ( $senderName && $senderEmail && $senderPhone && $subject && $message) {
   $recipient = RECIPIENT_NAME . " <" . RECIPIENT_EMAIL . ">";
   $headers = "From: " . $senderName . "";
-  $msgBody = "\n Email: ". $senderEmail .  "\n Phone: ". $senderPhone . "\n Subject: ". $subject .  "\n Message: " . $message . "";
+  $msgBody = "Email: ". $senderEmail .  "\n\nPhone: ". $senderPhone . "\n\nSubject: ". $subject .  "\n\nMessage:\n" . $message . "";
 
 // changes start
 
