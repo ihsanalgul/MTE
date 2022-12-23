@@ -1,8 +1,8 @@
 <?php
 
 // Define some constants
-define( "RECIPIENT_NAME", "John Doe" );
-define( "RECIPIENT_EMAIL", "youremail@mail.com" );
+define( "RECIPIENT_NAME", "You are the Boss" );
+define( "RECIPIENT_EMAIL", "info@medicalteameemsdelta.com" );
 
 
 // Read the form values
