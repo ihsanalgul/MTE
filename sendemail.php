@@ -46,7 +46,7 @@ try {
         $mail->Host = 'medicalteameemsdelta.com';
         $mail->Port = 465;
         $mail->Username = 'info@medicalteameemsdelta.com';
-        $mail->Password = 'Qwerty.123+';
+        $mail->Password = 'oOu_*9W+WOCv';
         $mail->setFrom($senderEmail);
 
         $mail->Subject = $subject;
