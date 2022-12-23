@@ -4,13 +4,10 @@ use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 use PHPMailer\PHPMailer\SMTP;
 
-// Define some constants
-define( "RECIPIENT_NAME", "info" );
-define( "RECIPIENT_EMAIL", "info@medicalteameemsdelta.com" );
-
 require_once('../PHPMailer/src/Exception.php');
 require_once('../PHPMailer/src/PHPMailer.php');
 require_once('../PHPMailer/src/SMTP.php');
+require_once('../config.php');
 
 
 // Read the form values
@@ -43,15 +40,15 @@ try {
                             'verify_peer_name' => false,
                             'allow_self_signed' => true)
                             );
-        $mail->Host = 'medicalteameemsdelta.com';
-        $mail->Port = 465;
-        $mail->Username = 'info@medicalteameemsdelta.com';
-        $mail->Password = 'oOu_*9W+WOCv';
+        $mail->Host = HOST;
+        $mail->Port = PORT;
+        $mail->Username = USERNAME;
+        $mail->Password = PASSWORD;
+        
+        $mail->CharSet = 'UTF-8';
         $mail->setFrom($senderEmail);
-
         $mail->Subject = $subject;
         $mail->Body = $msgBody;
-        $mail->CharSet = 'UTF-8';
         $mail->addAddress(RECIPIENT_EMAIL);
         
         $mail->send();
