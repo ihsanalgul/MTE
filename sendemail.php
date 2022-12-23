@@ -23,57 +23,48 @@ $message = isset( $_POST['message'] ) ? preg_replace( "/(From:|To:|BCC:|CC:|Subj
 
 try {
 
-// If all values exist, send the email
-if ( $senderName && $senderEmail && $senderPhone && $subject && $message) {
-  $recipient = RECIPIENT_NAME . " <" . RECIPIENT_EMAIL . ">";
-  $headers = "From: " . $senderName . "";
-  $msgBody = "Email: ". $senderEmail .  "\n\nPhone: ". $senderPhone . "\n\nSubject: ". $subject .  "\n\nMessage:\n" . $message . "";
+        // If all values exist, send the email
+        if ( $senderName && $senderEmail && $senderPhone && $subject && $message) {
+          $recipient = RECIPIENT_NAME . " <" . RECIPIENT_EMAIL . ">";
+          $headers = "From: " . $senderName . "";
+          $msgBody = "Email: ". $senderEmail .  "\n\nPhone: ". $senderPhone . "\n\nSubject: ". $subject .  "\n\nMessage:\n" . $message . "";
 
-// changes start
+        // changes start
 
-$mail = new PHPMailer(true);
-$mail->SMTPDebug = 0;   
-$mail->isSMTP();
-$mail->SMTPAuth = true;
-$mail->SMTPSecure = 'ssl';
-// $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;    
-$mail->SMTPOptions = array(
-                     'ssl' => array(
-                     'verify_peer' => false,
-                     'verify_peer_name' => false,
-                     'allow_self_signed' => true)
-                     );
- $mail->Host = 'medicalteameemsdelta.com';
- $mail->Port = 465;
- $mail->Username = 'info@medicalteameemsdelta.com';
- $mail->Password = 'Qwerty.123+';
- $mail->setFrom($senderEmail);
+        $mail = new PHPMailer(true);
+        $mail->SMTPDebug = 0;   
+        $mail->isSMTP();
+        $mail->SMTPAuth = true;
+        $mail->SMTPSecure = 'ssl';
+        // $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;    
+        $mail->SMTPOptions = array(
+                            'ssl' => array(
+                            'verify_peer' => false,
+                            'verify_peer_name' => false,
+                            'allow_self_signed' => true)
+                            );
+        $mail->Host = 'medicalteameemsdelta.com';
+        $mail->Port = 465;
+        $mail->Username = 'info@medicalteameemsdelta.com';
+        $mail->Password = 'Qwerty.123+';
+        $mail->setFrom($senderEmail);
 
- $mail->Subject = $subject;
- $mail->Body = $msgBody;
- $mail->CharSet = 'UTF-8';
- $mail->addAddress(RECIPIENT_EMAIL);
- 
- $mail->send();
- 
- //changes finish
+        $mail->Subject = $subject;
+        $mail->Body = $msgBody;
+        $mail->CharSet = 'UTF-8';
+        $mail->addAddress(RECIPIENT_EMAIL);
+        
+        $mail->send();
 
-
-  // $success = mail( $recipient, $headers, $msgBody );
-
-  
-echo "Mail has been sent successfully!";
-echo "<script>alert('Your message has been sucessfully submitted Thanks. 🙂');</script>";
-echo "<script>document.location.href='index.html'</script>";
+        echo "<script>alert('Your message has been sucessfully submitted Thanks. 🙂');</script>";
+        echo "<script>document.location.href='index.html'</script>";
+      }
+      
+    } catch (Exception $e) {
+    echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+    echo "<script>alert('Mail was not Send');</script>";
+    echo "<script>document.location.href='contact.html'</script>";
 }
-
-} catch (Exception $e) {
-  echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
-  echo "<script>alert('Mail was not Send');</script>";
-  echo "<script>document.location.href='contact.html'</script>";
-}
-
-
 
 
 ?>
