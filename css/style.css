@@ -7606,6 +7606,7 @@ img{
 .contact-form .form-group input[type="text"],
 .contact-form .form-group input[type="email"],
 .contact-form .form-group input[type="url"],
+.contact-form .form-group input[type="number"],
 .contact-form .form-group textarea,
 .contact-form .form-group select{
 	position: relative;
@@ -7624,6 +7625,16 @@ img{
     -ms-transition: all 300ms ease;
     -o-transition: all 300ms ease;
     transition: all 300ms ease;
+}
+
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type=number] {
+    -moz-appearance:textfield;
 }
 
 .contact-form .form-group input:focus,
