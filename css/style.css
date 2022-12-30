@@ -681,6 +681,42 @@ color:#ffffff;
 	color:#d24c59;
 }
 
+
+.heart-rate {
+width: 150px;
+height: 73px;
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+margin: auto;
+}
+
+.fade-in {
+position: absolute;
+width: 100%;
+height: 100%;
+background-color: #FFFFFF;
+top: 0;
+right: 0;
+animation: heartRateIn 2.5s linear infinite;
+}
+
+.fade-out {
+position: absolute;
+width: 120%;
+height: 100%;
+top: 0;
+left: -120%;
+animation: heartRateOut 2.5s linear infinite;
+background: rgba(255, 255, 255, 1);
+background: -moz-linear-gradient(left, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 50%, rgba(255, 255, 255, 0) 100%);
+background: -webkit-linear-gradient(left, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 50%, rgba(255, 255, 255, 0) 100%);
+background: -o-linear-gradient(left, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 50%, rgba(255, 255, 255, 0) 100%);
+background: -ms-linear-gradient(left, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 50%, rgba(255, 255, 255, 0) 100%);
+background: linear-gradient(to right, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 80%, rgba(255, 255, 255, 0) 100%);
+}
+
 .preloader{
 	position:fixed;
 	left:0px;
@@ -691,7 +727,7 @@ color:#ffffff;
 	background-color: #ffffff;
 	background-position:center center;
 	background-repeat:no-repeat;
-	background-image:url(../images/icons/preloader.svg);
+	background-image:url(../images/icons/hearth.svg);
 	background-size:100px;
 }
 
