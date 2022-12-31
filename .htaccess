@@ -2,3 +2,27 @@ RewriteCond %{HTTPS} !=on
 RewriteCond %{REQUEST_URI} !^/.well-known/acme-challenge/.+$
 RewriteCond %{REQUEST_URI} !^/.well-known/acme-challenge/[0-9a-zA-Z_-]+$
 RewriteRule (.*) https://www.medicalteameemsdelta.com/$1 [R=301,L]
+
+
+<IfModule mod_rewrite.c> 
+Options +FollowSymLinks -MultiViews
+
+
+RewriteEngine On 
+RewriteBase /
+
+#removing trailing slash
+RewriteCond %{REQUEST_FILENAME} !-d     
+RewriteRule ^(.*)/$ $1 [R=301,L]
+
+#html
+RewriteCond %{REQUEST_FILENAME} !-f 
+RewriteCond %{REQUEST_FILENAME} !-d 
+RewriteRule ^([^\.]+)$ $1.html [NC,L]
+
+#index redirect 
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /index\.html\ HTTP/ 
+RewriteRule ^index\.html$ https://www.medicalteameemsdelta.com/ [R=301,L]
+RewriteCond %{THE_REQUEST} \.html 
+RewriteRule ^(.*)\.html$ /$1 [R=301,L] 
+</IfModule> 
