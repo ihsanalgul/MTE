@@ -6723,19 +6723,19 @@ img{
 
 ***/
 
-.blog-sidebar{
+.nieuws{
 	position: relative;
 }
 
-.blog-sidebar .news-block{
+.nieuws .news-block{
 	margin-bottom: 50px;
 }
 
-.blog-sidebar .news-block .lower-content{
+.nieuws .news-block .lower-content{
 	padding: 30px 30px;
 }
 
-.blog-sidebar .news-block h4{
+.nieuws .news-block h4{
 	font-size: 26px;
 }
 
