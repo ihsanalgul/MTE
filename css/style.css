@@ -10489,7 +10489,7 @@ input[type=number] {
 
 .header-top-two .top-left{
 	position:relative;
-	float:left;
+	float:right;
 }
 
 .header-top-two .top-left .links{
@@ -10525,7 +10525,7 @@ input[type=number] {
 
 .header-top-two .top-right{
 	position:relative;
-	float:right;
+	float:left;
 }
 
 .header-top-two .top-right .social-icons{
