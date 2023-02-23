@@ -1736,6 +1736,9 @@ img{
 	background-size: cover;
 	padding: 250px 0 200px;
 	text-align: center;
+	height: 100vh;
+	background-color: yellow;
+	overflow: hidden;
 }
 
 .banner-carousel .slide-item:before{
@@ -1751,6 +1754,7 @@ img{
 
 .banner-carousel .content-box{
 	position: relative;
+	margin-top: 10vh;
 }
 
 .banner-carousel .content-box .title{
@@ -1758,7 +1762,7 @@ img{
     font-size: 28px;
     color: #faaC1D;
     font-weight: 500;
-    margin-bottom: 25px;
+    margin-bottom: 10px;
 	opacity: 0;
 	-webkit-transform: translateY(100px);
 	-moz-transform: translateY(100px);
