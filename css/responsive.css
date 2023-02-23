@@ -98,11 +98,13 @@
 	.banner-carousel .content-box h2{
 		font-size: 50px;
 		line-height: 1.2em;
+		margin-top: 20vh;
 		margin-bottom: 20px;
 	}
 
 	.banner-carousel .slide-item{
 		padding: 150px 0;
+		height: 100vh;
 	}
 
 	.coming-soon-section .outer-box{
